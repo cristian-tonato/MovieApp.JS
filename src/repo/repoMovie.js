@@ -74,25 +74,27 @@ function RepoMovie() {
     useEffect(() => {
         fetchMovies();
     }, []);
+
     //paginacion
+
     const [data, setData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [pagination, setPagination] = useState(1);
 
     useEffect(() => {
         axios
             .get(
-                `https://api.themoviedb.org/3/movie/550?api_key=7ddf0d9b45b1b0b4d3291fd49e59699a&page=${currentPage}`
+                `https://api.themoviedb.org/3/movie/popular?api_key=7ddf0d9b45b1b0b4d3291fd49e59699a&page=${pagination}`
             )
             .then((response) => setData(response.data))
             .catch((error) => console.error(error));
-    }, [currentPage]);
+    }, [pagination]);
 
     const nextPage = () => {
-        setCurrentPage(currentPage + 1);
+        setPagination(pagination + 1);
     };
 
     const prevPage = () => {
-        setCurrentPage(currentPage - 1);
+        setPagination(pagination - 1);
     };
 
     // return (
@@ -186,10 +188,6 @@ function RepoMovie() {
                                         ) : (
                                             "Sorry, no trailer available"
                                         )}
-
-                                        <p className={styles.thriller_overview}>
-                                            {movie.overview}
-                                        </p>
                                     </div>
                                 </div>
                             )}
@@ -197,6 +195,11 @@ function RepoMovie() {
                     ) : null}
                 </main>
             </div>
+            <section>
+                <article className={styles.thriller_overview}>
+                    {movie.overview}
+                </article>
+            </section>
             <div className={styles.container_search}>
                 <form className={styles.search} onSubmit={searchMovies}>
                     <input
@@ -237,15 +240,13 @@ function RepoMovie() {
                 <button
                     className={styles.button}
                     onClick={prevPage}
-                    disabled={currentPage === 1}
+                    disabled={pagination === 1}
                 >
                     Prev
                 </button>
                 <button className={styles.button} onClick={nextPage}>
                     Next
                 </button>
-
-                {/* render the data... */}
             </div>
         </div>
     );

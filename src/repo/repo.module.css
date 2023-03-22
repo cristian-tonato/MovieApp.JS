@@ -1,28 +1,39 @@
 .container_search {
     position: relative;
-    width: 100%;
-    margin: 0;
+    /* width: 100%; */
+    /* margin: 0; */
+    display: flex;
+    justify-content: center;
+    justify-items: center;
 }
 .search {
-    height: 32px;
+    height: 33px;
     border: 1px solid #1f4c47;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
+    width: 300px;
+    /* -webkit-border-radius: 15px;
+    -moz-border-radius: 15px; */
     border-radius: 15px;
     background-color: #fff;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 30px;
 }
 .search_input {
     font-size: 15px;
     border-width: 0;
     background: transparent;
-    width: 100%;
-    padding: 8px 12px 10px;
+    padding: 8px 25px 8px;
     margin-bottom: 1em;
     outline: none;
+    margin-top: 6px;
+    /* display: flex;
+    justify-content: center;
+    justify-items: center; */
 }
 .search_button {
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     right: 0;
     height: 34px;
@@ -40,6 +51,7 @@
 }
 .thriller {
     min-height: 700px;
+    margin-top: 20px;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -61,8 +73,9 @@
     height: 600px;
 }
 .thriller_overview {
-    color: #fff;
+    color: #ffffff;
     font-size: 25px;
+    background: #0f1014;
 }
 .thriller_title {
     color: #fff;
@@ -70,17 +83,19 @@
     display: flex;
     justify-content: center;
     justify-items: center;
+    margin-top: 20px;
 }
 
 .container_poster {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     justify-items: center;
 
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .poster {
-    padding: 1.5rem;
+    padding: 1rem;
     min-height: 100vh;
     min-width: 100vh;
     list-style-type: none;
@@ -93,22 +108,22 @@
 .poster_item {
     background-color: rgb(4, 5, 5);
     border-radius: 20px;
-    margin: 10px;
+    margin: 30px;
     cursor: pointer;
-    max-height: 10vh;
+    /* max-height: 100vh; */
 }
 .poster_title {
     text-align: center;
     color: #fff;
 }
 .poster_path {
-    border-radius: 40px;
+    border-radius: 80px;
 }
-.poster .poster_path:hover {
+/* .poster .poster_path:hover {
     width: 400px;
     opacity: 1;
     filter: contrast(120%);
-}
+} */
 .pages {
     display: flex;
     justify-content: center;
