@@ -121,70 +121,81 @@ function RepoMovie() {
                     </button>
                 </form>
             </div>
+            <div>
+                <h1 className={styles.thriller_title}>{movie.title}</h1>
+            </div>
 
-            <div className={styles.container_thriller}>
-                {movie ? (
-                    <div
-                        className={styles.thriller}
-                        style={{
-                            backgroundImage: `url("$search_button{IMAGE_PATH}${movie.backdrop_path}")`,
-                        }}
-                    >
-                        {playing ? (
-                            <>
-                                <YouTube
-                                    videoId={trailer.key}
-                                    className={styles.thriller_reproductor}
-                                    containerClassName={
-                                        "youtube-container amru"
-                                    }
-                                    opts={{
-                                        width: "100%",
-                                        height: "100%",
-                                        playerVars: {
-                                            autoplay: 1,
-                                            controls: 0,
-                                            cc_load_policy: 0,
-                                            fs: 0,
-                                            iv_load_policy: 0,
-                                            modestbranding: 0,
-                                            rel: 0,
-                                            showinfo: 0,
-                                        },
-                                    }}
-                                />
-                                <button
-                                    onClick={() => setPlaying(false)}
-                                    className={styles.buttton}
+            <div>
+                <main>
+                    {movie ? (
+                        <div
+                            className={styles.thriller}
+                            style={{
+                                backgroundImage: `url("${IMAGE_PATH}${movie.backdrop_path}")`,
+                            }}
+                        >
+                            {playing ? (
+                                <>
+                                    <YouTube
+                                        videoId={trailer.key}
+                                        className={styles.thriller_reproductor}
+                                        containerClassName={
+                                            "youtube-container amru"
+                                        }
+                                        opts={{
+                                            width: "100%",
+                                            height: "100%",
+                                            playerVars: {
+                                                autoplay: 1,
+                                                controls: 0,
+                                                cc_load_policy: 0,
+                                                fs: 0,
+                                                iv_load_policy: 0,
+                                                modestbranding: 0,
+                                                rel: 0,
+                                                showinfo: 0,
+                                            },
+                                        }}
+                                    />
+                                    <button
+                                        onClick={() => setPlaying(false)}
+                                        className={styles.buttton}
+                                    >
+                                        Close
+                                    </button>
+                                </>
+                            ) : (
+                                <div
+                                    className={styles.container_imgReproductor}
                                 >
-                                    Close
-                                </button>
-                            </>
-                        ) : (
-                            <div className={styles.container_imgReproductor}>
-                                <div className="">
-                                    {trailer ? (
-                                        <button
-                                            className={styles.button}
-                                            onClick={() => setPlaying(true)}
-                                            type="button"
-                                        >
-                                            Play Trailer
-                                        </button>
-                                    ) : (
-                                        "Sorry, no trailer available"
-                                    )}
+                                    {/* <h1 className={styles.thriller_title}>
+                                        {movie.title}
+                                    </h1>{" "}
                                     <h1 className={styles.thriller_title}>
                                         {movie.title}
-                                    </h1>
-                                    <p className={styles.thriller_overview}>
-                                        {movie.overview}
-                                    </p>
+                                    </h1> */}
+                                    <div className="">
+                                        {trailer ? (
+                                            <button
+                                                className={styles.button}
+                                                onClick={() => setPlaying(true)}
+                                                type="button"
+                                            >
+                                                Play Trailer
+                                            </button>
+                                        ) : (
+                                            "Sorry, no trailer available"
+                                        )}
+
+                                        <p className={styles.thriller_overview}>
+                                            {movie.overview}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
-                    </div>
-                ) : null}
+                            )}
+                        </div>
+                    ) : null}
+                </main>
             </div>
 
             <div className={styles.container_poster}>
