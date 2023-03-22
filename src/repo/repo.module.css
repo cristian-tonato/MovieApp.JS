@@ -1,0 +1,91 @@
+.container_search {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+.search {
+    height: 32px;
+    border: 1px solid #1f4c47;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.search_input {
+    font-size: 14px;
+
+    border-width: 0;
+    background: transparent;
+    width: 90%;
+    padding: 8px 0 12px 1em;
+    color: #333;
+    outline: none;
+}
+.search_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 34px;
+    width: 80px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 4px;
+    border-width: 0;
+    background-color: #acdafe;
+    -webkit-border-radius: 0px 5px 5px 0px;
+    -moz-border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 15px 5px 0px;
+    cursor: pointer;
+}
+.thriller {
+    min-height: 700px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.button {
+    background-color: #0f1014;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.thriller_reproductor {
+    width: 100%;
+    height: 600px;
+}
+
+.container_poster {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+.poster {
+    padding: 1.5rem;
+    min-height: 100vh;
+    list-style-type: none;
+    white-space: nowrap;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.poster_item {
+    background-color: rgb(194, 213, 213);
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+.poster_title {
+    text-align: center;
+}
+.poster_path {
+    border-radius: 40px;
+}
