@@ -76,10 +76,13 @@
     display: flex;
     justify-content: space-between;
     justify-items: center;
+
+    overflow: hidden;
 }
 .poster {
     padding: 1.5rem;
     min-height: 100vh;
+    min-width: 100vh;
     list-style-type: none;
     white-space: nowrap;
     overflow-x: auto;
@@ -92,6 +95,7 @@
     border-radius: 20px;
     margin: 10px;
     cursor: pointer;
+    max-height: 10vh;
 }
 .poster_title {
     text-align: center;
@@ -99,4 +103,14 @@
 }
 .poster_path {
     border-radius: 40px;
+}
+.poster .poster_path:hover {
+    width: 400px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+.pages {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
 }

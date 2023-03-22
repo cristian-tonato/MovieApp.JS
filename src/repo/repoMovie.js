@@ -108,7 +108,7 @@ function RepoMovie() {
 
     return (
         <div>
-            <div className={styles.container_search}>
+            {/* <div className={styles.container_search}>
                 <form className={styles.search} onSubmit={searchMovies}>
                     <input
                         type="text"
@@ -120,7 +120,7 @@ function RepoMovie() {
                         Search
                     </button>
                 </form>
-            </div>
+            </div> */}
             <div>
                 <h1 className={styles.thriller_title}>{movie.title}</h1>
             </div>
@@ -159,7 +159,7 @@ function RepoMovie() {
                                     />
                                     <button
                                         onClick={() => setPlaying(false)}
-                                        className={styles.buttton}
+                                        className={styles.button}
                                     >
                                         Close
                                     </button>
@@ -197,6 +197,19 @@ function RepoMovie() {
                     ) : null}
                 </main>
             </div>
+            <div className={styles.container_search}>
+                <form className={styles.search} onSubmit={searchMovies}>
+                    <input
+                        type="text"
+                        className={styles.search_input}
+                        placeholder="search"
+                        onChange={(e) => setSearchKey(e.target.value)}
+                    />
+                    <button className={styles.search_button} type="submit">
+                        Search
+                    </button>
+                </form>
+            </div>
 
             <div className={styles.container_poster}>
                 <div className={styles.poster}>
@@ -220,11 +233,17 @@ function RepoMovie() {
                     ))}
                 </div>
             </div>
-            <div>
-                <button onClick={prevPage} disabled={currentPage === 1}>
+            <div className={styles.pages}>
+                <button
+                    className={styles.button}
+                    onClick={prevPage}
+                    disabled={currentPage === 1}
+                >
                     Prev
                 </button>
-                <button onClick={nextPage}>Next</button>
+                <button className={styles.button} onClick={nextPage}>
+                    Next
+                </button>
 
                 {/* render the data... */}
             </div>
